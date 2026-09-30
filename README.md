@@ -29,6 +29,22 @@ sys.path.insert(0, '/content/agentic-workshop/src')
 !pip install -q -r /content/agentic-workshop/requirements.txt
 ```
 
+### Paste-proof version
+
+Copying a multi-line cell into Colab sometimes flattens the line breaks and gives
+`SyntaxError: invalid syntax`. These two cells are one line each, so they survive it:
+
+```python
+!git clone -q https://github.com/jb1704/agentic-workshop.git /content/agentic-workshop 2>/dev/null || (cd /content/agentic-workshop && git pull -q)
+```
+
+```python
+import sys; sys.path.insert(0, '/content/agentic-workshop/src')
+```
+
+Better still: open a notebook straight from GitHub (Colab -> File -> Open notebook ->
+GitHub tab -> `jb1704/agentic-workshop`). Nothing to paste at all.
+
 After pulling new code mid-session, either restart the runtime or reload the module:
 
 ```python
